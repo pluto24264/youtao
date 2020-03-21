@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 2 elements to &apos;taotao-portal/src/main/java/com.taotao.portal.mapper&apos;&#x0D;&#x0A;- Original project: &apos;taotao-manager-mapper&apos;&#x0D;&#x0A;- Destination element: &apos;taotao-portal/src/main/java/com.taotao.portal.mapper&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     com.taotao.mapper.TbContentMapper.java&#x0D;&#x0A;     TbContentMapper.xml" description="Copy elements" destination="=taotao-portal/src\/main\/java&lt;com.taotao.portal.mapper" element1="src/main/java/com/taotao/mapper/TbContentMapper.xml" element2="/src\/main\/java&lt;com.taotao.mapper{TbContentMapper.java" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1581395934445" units="1" version="1.0"/>
+</session>

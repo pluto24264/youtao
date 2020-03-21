@@ -1,0 +1,14 @@
+package com.taotao.portal.service.impl;
+
+import com.taotao.pojo.TaotaoResult;
+import com.taotao.portal.service.CartService;
+
+public class CartServiceImpl implements CartService {
+
+	@Override
+	public TaotaoResult addCartService(Long itemId, Integer num) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

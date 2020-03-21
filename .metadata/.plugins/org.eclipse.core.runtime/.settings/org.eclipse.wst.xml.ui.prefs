@@ -1,0 +1,7 @@
+autoProposeCode=<\=\:abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ 
+eclipse.preferences.version=1
+newFileTemplateName=mapper_xml
+org.eclipse.wst.sse.ui.custom_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates><template autoinsert\="true" context\="xml_new" deleted\="false" description\="spring\u4E2Dmapper\u7684\u6620\u5C04\u6587\u4EF6" enabled\="true" name\="mapper_xml">&lt;?xml version\="1.0" encoding\="UTF-8"?&gt;&\#13;\r\n&lt;\!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http\://mybatis.org/dtd/mybatis-3-mapper.dtd" &gt;</template></templates>
+org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart.lastActivePage=1
+xml_content_assist_default_page_sort_order=org.eclipse.wst.xml.ui.proposalCategory.xmlTags\u0000org.eclipse.wst.xml.ui.proposalCategory.xmlTemplates\u0000
+xml_content_assist_own_page_sort_order=org.eclipse.wst.xml.ui.proposalCategory.xmlTemplates\u0000org.eclipse.wst.xml.ui.proposalCategory.xmlTags\u0000

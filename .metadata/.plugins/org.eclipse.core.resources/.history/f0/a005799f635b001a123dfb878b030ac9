@@ -1,0 +1,47 @@
+package com.taotao.portal.service.impl;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+
+import com.taotao.pojo.TaotaoResult;
+import com.taotao.pojo.TbItem;
+import com.taotao.portal.pojo.CartItem;
+import com.taotao.portal.service.CartService;
+import com.taotao.utils.HttpClientUtil;
+
+/**
+ * 商品购物车
+ * 
+ * @author xcy
+ *
+ */
+@Service
+public class CartServiceImpl implements CartService {
+
+	@Value("${REST_BASE_URL}")
+	private String REST_BASE_URL;
+
+	@Value("${ITEM_INFO_URL}")
+	private String ITEM_INFO_URL;
+
+	@Override
+	public TaotaoResult addCartService(Long itemId, Integer num) {
+		
+		//取商品信息
+		CartItem cartItem = new CartItem();
+		// 根据商品id查询商品信息
+		String JSON = HttpClientUtil.doGet(REST_BASE_URL + ITEM_INFO_URL + itemId);
+		// 把json数据转换成java对象
+		TaotaoResult result = TaotaoResult.formatToPojo(JSON, TbItem.class);
+		if (result.getStatus() == 200) {
+			TbItem item = (TbItem) result.getData();
+			cartItem.setId(item.getId());
+			cartItem.setImage(item.getImage() == null ? "" : item.getImage().split(",")[0]);
+			cartItem.setPrice(item.getPrice());
+			cartItem.setNum(num);
+			cartItem.setTitle(item.getTitle());
+		}
+		return null;
+	}
+
+}

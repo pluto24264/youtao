@@ -1,0 +1,49 @@
+package com.taotao.rest.service.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+
+import com.taotao.mapper.TbItemMapper;
+import com.taotao.pojo.TaotaoResult;
+import com.taotao.pojo.TbItem;
+import com.taotao.rest.dao.JedisClient;
+import com.taotao.rest.service.ItemService;
+import com.taotao.utils.JsonUtils;
+
+@Service
+public class ItemServiceImpl implements ItemService {
+
+	@Autowired
+	private TbItemMapper itemMapper;
+
+	@Autowired
+	private JedisClient jedisClient;
+
+	@Value("${REDIS_ITEM_KEY}")
+	private String REDIS_ITEM_KEY;
+
+	@Value("${REDIS_ITEM_EXPIRE_KEY}")
+	private Integer REDIS_ITEM_EXPIRE_KEY;
+
+	@Override
+	public TaotaoResult getItemBaseInfo(long itemId) {
+		String redisKey = REDIS_ITEM_KEY + ":" + itemId + ":base";
+		// 从缓存中取商品信息
+		String json = jedisClient.get(redisKey);
+
+		// 根据商品id查询商品信息
+		TbItem item = itemMapper.selectByPrimaryKey(itemId);
+		try {
+
+			// 把商品信息存入redis
+			jedisClient.set(redisKey, JsonUtils.objectToJson(item));
+			// 设置key的有效期
+			jedisClient.expire(redisKey, REDIS_ITEM_EXPIRE_KEY);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return TaotaoResult.ok(item);
+	}
+
+}

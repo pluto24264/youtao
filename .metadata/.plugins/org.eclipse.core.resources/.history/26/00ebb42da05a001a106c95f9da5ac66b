@@ -1,0 +1,39 @@
+package com.taotao.rest.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.taotao.pojo.TaotaoResult;
+import com.taotao.rest.dao.JedisClient;
+import com.taotao.rest.service.ItemService;
+
+@Controller
+@RequestMapping("/item")
+public class ItemController {
+
+	@Autowired
+	private ItemService itemService;
+
+	@Autowired
+	private JedisClient jedisClient;
+
+	@Value("${REDIS_ITEM_KEY}")
+	private String REDIS_ITEM_KEY;
+
+	@RequestMapping("/info/{itemId}")
+	@ResponseBody
+	public TaotaoResult getItemBaseInfo(@PathVariable Long itemId) {
+		// 添加缓存逻辑
+
+		// 查询基础信息
+		TaotaoResult result = itemService.getItemBaseInfo(itemId);
+		// 把商品信息存入redis
+		jedisClient.set(key, value);
+		// 设置key的有效期
+		return result;
+	}
+}

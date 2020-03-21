@@ -1,0 +1,6 @@
+127.0.0.1 - - [29/Feb/2020:10:23:36 +0800] "GET /solr/query?q=java&page=1 HTTP/1.1" 200 101 http-bio-8083-exec-1 20547
+127.0.0.1 - - [29/Feb/2020:10:23:46 +0800] "GET /solr/query?q=%E6%89%8B%E6%9C%BA&page=1 HTTP/1.1" 200 23044 http-bio-8083-exec-3 300
+0:0:0:0:0:0:0:1 - - [29/Feb/2020:10:25:37 +0800] "GET /solr/query?q=%E6%89%8B%E6%9C%BA HTTP/1.1" 200 23044 http-bio-8083-exec-6 61
+0:0:0:0:0:0:0:1 - - [29/Feb/2020:10:25:37 +0800] "GET /favicon.ico HTTP/1.1" 404 973 http-bio-8083-exec-7 3
+127.0.0.1 - - [29/Feb/2020:10:28:39 +0800] "GET /solr/query?q=%E6%89%8B%E6%9C%BA&page=1 HTTP/1.1" 200 23044 http-bio-8083-exec-3 76
+127.0.0.1 - - [29/Feb/2020:10:30:39 +0800] "GET /solr/query?q=%E6%89%8B%E6%9C%BA&page=1 HTTP/1.1" 200 23044 http-bio-8083-exec-6 39

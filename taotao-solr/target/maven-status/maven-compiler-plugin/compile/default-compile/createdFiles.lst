@@ -1,0 +1,11 @@
+com\taotao\solr\pojo\SearchResult.class
+com\taotao\solr\service\impl\ItemServiceImpl.class
+com\taotao\solr\service\ItemSerchService.class
+com\taotao\solr\dao\impl\SearchDaoImpl.class
+com\taotao\solr\controller\ItemController.class
+com\taotao\solr\service\ItemService.class
+com\taotao\solr\mapper\ItemMapper.class
+com\taotao\solr\controller\ItemSearchController.class
+com\taotao\solr\pojo\Item.class
+com\taotao\solr\dao\SearchDao.class
+com\taotao\solr\service\impl\ItemSerchServiceImpl.class

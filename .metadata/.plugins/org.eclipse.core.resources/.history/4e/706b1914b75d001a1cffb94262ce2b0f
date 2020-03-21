@@ -1,0 +1,25 @@
+package com.taotao.portal.service.impl;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+
+import com.taotao.portal.pojo.Order;
+import com.taotao.portal.service.OrderService;
+import com.taotao.utils.HttpClientUtil;
+
+@Service
+public class OrderServiceImpl implements OrderService {
+
+	@Value("${ORDER_BASE_URL}")
+	private String ORDER_BASE_URL;
+	@Value("${ORDER_CREATE_URL}")
+	private String ORDER_CREATE_URL;
+
+	@Override
+	public String createOrder(Order order) {
+		//调用taotao-order服务，提交订单
+		HttpClientUtil.
+		return null;
+	}
+
+}
